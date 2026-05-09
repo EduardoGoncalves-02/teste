@@ -3,8 +3,11 @@
 # Integrantes do Projeto:
 
 -Julia Dick, RA 1072615460, usuário do Github juliadick-blip
+
 -Eduardo Daniel G. Pereira, RA 10726110334, usuário do Github EduardoGoncalves-02
+
 -Melissa Mel Monteiro, RA 1072616173, usuário do Github melmonteirosilva
+
 -João Trilha, RA 10722618828, usuário do Github TrilhaX 
 
 ## Sobre o Projeto
