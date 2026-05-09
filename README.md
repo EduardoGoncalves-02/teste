@@ -2,13 +2,13 @@
 
 # Integrantes do Projeto:
 
--Julia Dick, RA 1072615460, usuário do Github: juliadick-blip
+- Julia Dick, RA 1072615460, usuário do Github: juliadick-blip
 
--Eduardo Daniel G. Pereira, RA 10726110334, usuário do Github: EduardoGoncalves-02
+- Eduardo Daniel G. Pereira, RA 10726110334, usuário do Github: EduardoGoncalves-02
 
--Melissa Mel Monteiro, RA 1072616173, usuário do Github: melmonteirosilva
+- Melissa Mel Monteiro, RA 1072616173, usuário do Github: melmonteirosilva
 
--João Trilha, RA 10722618828, usuário do Github: TrilhaX 
+- João Trilha, RA 10722618828, usuário do Github: TrilhaX 
 
 ## Sobre o Projeto
 Este projeto consiste no desenvolvimento de um sistema de controle de estoque em
@@ -115,47 +115,13 @@ Exibe:
 
 ---
 
-# Tecnologias Utilizadas
-
-- Java
-- JOptionPane
-- Vetores
-- Subrotinas (métodos)
-- NetBeans
-
----
-
-# Estrutura do Projeto
-
-O sistema foi dividido em métodos para facilitar a organização do código e 
-seguir os requisitos da atividade.
-
-Exemplo:
-
-| Método | Responsabilidade |
-|---|---|
-| menuPrincipal() | Exibir menu principal |
-| menuCadastro() | Exibir menu de cadastro |
-| incluirProduto() | Realizar inclusão |
-| produtoExiste() | Validar produtos repetidos |
-
----
-
-# Regras de Validação
-
-O sistema realiza validações importantes, como:
-
-- não permitir produtos com nomes duplicados;
-- preço maior que zero;
-- quantidade maior ou igual a zero;
-- confirmação antes de salvar operações.
-
----
-
 # Organização dos Dados
 
-Os dados são armazenados em vetores, conforme solicitado na atividade.
-
+- Os dados são armazenados em vetores, conforme solicitado na atividade.
+- Possui regras de validação para evitar recastros, escolha de opções inválidas,
+entre outras situações.
+- O sistema foi dividido em métodos(subrotinas para facilitar a organização do 
+código e seguir os requisitos da atividade.
 
 
 Desenvolvido utilizado JDK 25 e NetBeans 29.

@@ -25,12 +25,15 @@ public class Principal {
                     JOptionPane.showInputDialog(
                             "XYZ COMERCIO DE PRODUTOS LTDA.\n"
                             + "SISTEMA DE CONTROLE DE ESTOQUE\n"
+                            +"\n"
                             + "MENU PRINCIPAL\n"
+                            +"\n"
                             + "1 - CADASTRO DE PRODUTOS\n"
                             + "2 - MOVIMENTAÇÃO\n"
                             + "3 - REAJUSTE DE PREÇOS\n"
                             + "4 - RELOTÓRIOS\n"
                             + "0 - FINALIZAR\n"
+                            +"\n"
                             + "OPÇÃO: "
                     )
             );
@@ -62,12 +65,15 @@ public class Principal {
             opcao = Integer.parseInt(
                     JOptionPane.showInputDialog( "XYZ COMERCIO DE PRODUTOS LTDA.\n"
                             + "SISTEMA DE CONTROLE DE ESTOQUE\n"
+                            +"\n"
                             + "CADASTRO DE PRODUTOS\n"
+                            +"\n"
                             + "1 - INCLUSÃO\n"
                             + "2 - ALTERAÇÃO\n"
                             + "3 - CONSULTA\n"
                             + "4 - EXCLUSÃO\n"
                             + "0 - RETORNAR\n"
+                            +"\n"
                             + "OPÇÃO: "
                     )
             );
@@ -153,10 +159,8 @@ public class Principal {
                     break;
                 }
             }
-
-            // ==========================
+            
             // CONFIRMAÇÃO
-            // ==========================
             confirma = JOptionPane.showInputDialog(
                     "CONFIRMA INCLUSÃO (S/N)?"
             ).toUpperCase().charAt(0);
