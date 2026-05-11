@@ -1,7 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.a3_algoritmos_gestaoestoque;
 
 import javax.swing.JOptionPane;
 
-public class Principal {
+/**
+ *
+ * @author Usuario
+ */
+public class Biblioteca {
 
     static String[] nomes = new String[100];
     static double[] precos = new double[100];
@@ -9,10 +18,6 @@ public class Principal {
     static int[] quantidades = new int[100];
 
     static int totalProdutos = 0;
-
-    public static void main(String[] args) {
-        menuPrincipal();
-    }
 
     // TELA 1.0
     public static void menuPrincipal() {
@@ -25,15 +30,15 @@ public class Principal {
                     JOptionPane.showInputDialog(
                             "XYZ COMERCIO DE PRODUTOS LTDA.\n"
                             + "SISTEMA DE CONTROLE DE ESTOQUE\n"
-                            +"\n"
+                            + "\n"
                             + "MENU PRINCIPAL\n"
-                            +"\n"
+                            + "\n"
                             + "1 - CADASTRO DE PRODUTOS\n"
                             + "2 - MOVIMENTAÇÃO\n"
                             + "3 - REAJUSTE DE PREÇOS\n"
                             + "4 - RELOTÓRIOS\n"
                             + "0 - FINALIZAR\n"
-                            +"\n"
+                            + "\n"
                             + "OPÇÃO: "
                     )
             );
@@ -54,8 +59,8 @@ public class Principal {
 
         } while (opcao != 0);
     }
-
     // TELA 1.1
+
     public static void menuCadastro() {
 
         int opcao;
@@ -63,17 +68,17 @@ public class Principal {
         do {
 
             opcao = Integer.parseInt(
-                    JOptionPane.showInputDialog( "XYZ COMERCIO DE PRODUTOS LTDA.\n"
+                    JOptionPane.showInputDialog("XYZ COMERCIO DE PRODUTOS LTDA.\n"
                             + "SISTEMA DE CONTROLE DE ESTOQUE\n"
-                            +"\n"
+                            + "\n"
                             + "CADASTRO DE PRODUTOS\n"
-                            +"\n"
+                            + "\n"
                             + "1 - INCLUSÃO\n"
                             + "2 - ALTERAÇÃO\n"
                             + "3 - CONSULTA\n"
                             + "4 - EXCLUSÃO\n"
                             + "0 - RETORNAR\n"
-                            +"\n"
+                            + "\n"
                             + "OPÇÃO: "
                     )
             );
@@ -108,7 +113,6 @@ public class Principal {
         do {
 
             // NOME
-
             while (true) {
 
                 nome = JOptionPane.showInputDialog(
@@ -124,7 +128,7 @@ public class Principal {
                     break;
                 }
             }
-            
+
             // PREÇO
             while (true) {
 
@@ -159,7 +163,7 @@ public class Principal {
                     break;
                 }
             }
-            
+
             // CONFIRMAÇÃO
             confirma = JOptionPane.showInputDialog(
                     "CONFIRMA INCLUSÃO (S/N)?"
@@ -180,7 +184,7 @@ public class Principal {
 
                 JOptionPane.showMessageDialog(null, "Cadastro cancelado.");
             }
-            
+
             // SE SIM PARA NOVA INCLUSÃO
             novaInclusao = JOptionPane.showInputDialog(
                     "NOVA INCLUSÃO (S/N)?"
@@ -188,7 +192,6 @@ public class Principal {
 
         } while (novaInclusao == 'S');
     }
-
 
     // SUBROTINA DE VALIDAÇÃO SE O PRODUTO EXISTE
     public static boolean produtoExiste(String nome) {
@@ -202,4 +205,5 @@ public class Principal {
 
         return false;
     }
+
 }
