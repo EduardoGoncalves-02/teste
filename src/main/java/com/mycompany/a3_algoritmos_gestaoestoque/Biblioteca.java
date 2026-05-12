@@ -93,6 +93,10 @@ public class Biblioteca {
                     alterarProduto();
                     break;
 
+                case 3:
+                    consultarProduto();
+                    break;
+
                 case 0:
                     JOptionPane.showMessageDialog(null, "Retornando ao menu principal...");
                     break;
@@ -212,20 +216,20 @@ public class Biblioteca {
 
     //TELA 1.1.2
     public static void alterarProduto() {
-        String itemAlterado;
+        String itemSolicitado;
         double novoPreco;
         String novaUnidade;
         int novaQuantidade;
-        char novaInclusao;
+        char novaAlteracao;
         char confirma;
 
         do {
             //QUAL ITEM SERÁ ALTERADO
             while (true) {
-                itemAlterado = JOptionPane.showInputDialog("ALTERAÇÃO DE PRODUTO\n"
+                itemSolicitado = JOptionPane.showInputDialog("ALTERAÇÃO DE PRODUTO\n"
                         + "NOME: ");
 
-                if (produtoExiste(itemAlterado) != true) {
+                if (produtoExiste(itemSolicitado) != true) {
                     JOptionPane.showMessageDialog(null, "ERRO: Produto não encontrado.");
                 } else {
                     break;
@@ -272,10 +276,9 @@ public class Biblioteca {
 
             if (confirma == 'S') {
 
-                precos[acharIndice(itemAlterado)] = novoPreco;
-                unidades[acharIndice(itemAlterado)] = novaUnidade;
-                quantidades[acharIndice(itemAlterado)] = novaQuantidade;
-
+                precos[acharIndice(itemSolicitado)] = novoPreco;
+                unidades[acharIndice(itemSolicitado)] = novaUnidade;
+                quantidades[acharIndice(itemSolicitado)] = novaQuantidade;
 
                 JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!");
 
@@ -284,26 +287,75 @@ public class Biblioteca {
                 JOptionPane.showMessageDialog(null, "Alteração cancelada.");
             }
 
-            // SE SIM PARA NOVA INCLUSÃO
-            novaInclusao = JOptionPane.showInputDialog(
-                    "NOVA INCLUSÃO (S/N)?"
+            // SE SIM PARA NOVA ALTERACAO
+            novaAlteracao = JOptionPane.showInputDialog(
+                    "NOVA ALTERAÇÃO (S/N)?"
             ).toUpperCase().charAt(0);
 
-        } while (novaInclusao == 'S');
+        } while (novaAlteracao == 'S');
 
     }
-    
+
     //PROCURA O INDICE DO PRODUTO A SER ALTERADO
-    static int acharIndice(String itemAlterado){
+    static int acharIndice(String itemSelecionado) {
         int index = -1;
-        
-        for(int i = 0; i < 100; i++){
-            if(nomes[i].equals(itemAlterado)){
-               index = i;
-               break;
+
+        for (int i = 0; i < totalProdutos; i++) {
+            if (nomes[i].equals(itemSelecionado)) {
+                index = i;
+                break;
             }
         }
         return index;
     }
-}
 
+    //TELA 1.1.3
+    public static void consultarProduto() {
+        int retornar;
+        String itemSelecionado;
+        char novaConsulta;
+        int indice;
+
+        do {
+            while (true) {
+                itemSelecionado = JOptionPane.showInputDialog("CONSULTA DE PRODUTO\n"
+                        + "\n"
+                        + "Produto que deseja consultar: ");
+
+                if (produtoExiste(itemSelecionado) != true) {
+                    JOptionPane.showMessageDialog(null, "ERRO: Produto não encontrado.");
+                } else {
+                    indice = acharIndice(itemSelecionado);
+                    break;
+                }
+            }
+            retornar = 1;
+            while (retornar != 0) {
+                try {
+                    retornar = Integer.parseInt(JOptionPane.showInputDialog("""
+                                                                            CONSULTA DE DADOS
+                                                                            
+                                                                            NOME        : %s
+                                                                            PREÇO       : %.2f
+                                                                            UNIDADE     : %s
+                                                                            QUANTIDADE  : %d
+                                                                            
+                                                                            Digite '0' para retornar.
+                                                                            """.formatted(nomes[indice],
+                                                                                    precos[indice],
+                                                                                    unidades[indice],
+                                                                                    quantidades[indice]
+                    )));
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Valor inválido.");
+                }
+            }
+            // SE SIM PARA NOVA ALTERACAO
+            novaConsulta = JOptionPane.showInputDialog(
+                    "NOVA CONSULTA (S/N)?"
+            ).toUpperCase().charAt(0);
+
+        } while (novaConsulta == 'S');
+
+    }
+}
