@@ -11,7 +11,7 @@ public class Principal {
 
     public static void main(String[] args) {
         menuPrincipal();
-
+//abóbra
         String [][] tabela = new String [100][4];
         for (int i = 0; i < totalProdutos; i++) {
             tabela[i][0] = nomes[i];
