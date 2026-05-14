@@ -10,5 +10,5 @@
         <maven.compiler.release>25</maven.compiler.release>
         <exec.mainClass>com.mycompany.a3_algoritmos_gestaoestoque2.Principal</exec.mainClass>
     </properties>
-    <name>A3_Algoritmos_GestaoEstoque</name>
+    <name>teste</name>
 </project>
